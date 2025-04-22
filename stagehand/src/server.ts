@@ -44,8 +44,25 @@ export const stagehandConfig: ConstructorParams = {
     process.env.BROWSERBASE_API_KEY && process.env.BROWSERBASE_PROJECT_ID
       ? {
           projectId: process.env.BROWSERBASE_PROJECT_ID!,
+          proxies: process.env.BROWSERBASE_PROXIES === "true",
           browserSettings: process.env.CONTEXT_ID
             ? {
+                fingerprint: {
+                  browsers: ["chrome", "firefox", "edge", "safari"],
+                  devices: ["desktop", "mobile"],
+                  locales: ["en-US", "en-GB"],
+                  operatingSystems: ["linux", "macos", "windows"],
+                  screen: {
+                    maxWidth: 1920,
+                    maxHeight: 1080,
+                    minWidth: 1024,
+                    minHeight: 768,
+                  },
+                },
+                viewport: {
+                  width: 1920,
+                  height: 1080,
+                },
                 context: {
                   id: process.env.CONTEXT_ID,
                   persist: true,
