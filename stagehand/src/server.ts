@@ -51,6 +51,8 @@ export const stagehandConfig: ConstructorParams = {
                   persist: true,
                 },
                 solveCaptchas: process.env.BROWSERBASE_SOLVE_CAPTCHA === "true",
+                advancedStealth:
+                  process.env.BROWSERBASE_ADVANCED_STEALTH === "true",
               }
             : undefined,
         }
