@@ -50,6 +50,7 @@ export const stagehandConfig: ConstructorParams = {
                   id: process.env.CONTEXT_ID,
                   persist: true,
                 },
+                solveCaptchas: process.env.BROWSERBASE_SOLVE_CAPTCHA === "true",
               }
             : undefined,
         }
